@@ -47,12 +47,14 @@ Le agradezco a la vida por tenerla a mi lado, por caminar juntos en las buenas y
 La amo con todo mi corazón. ¡Feliz cumpleaños Mi niña😍🥹❤️</p>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
     setTimeout(function () {
       document.getElementById("carga").style.display = "none";
       document.getElementById("polaroid").style.display = "block";
     }, 3500);
     function abrirCarta() {
+      confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
       document.getElementById("carta").style.display = "block";
     }
   </script>
