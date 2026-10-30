@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorpresa</title>
+  <style>
+    body { margin:0; min-height:100vh; display:flex;
+           align-items:center; justify-content:center;
+           background:#f5e6e8; font-family:Georgia, serif; }
+    #carga { text-align:center; }
+    .barra { width:200px; height:8px; background:#fff;
+             border-radius:4px; overflow:hidden; margin:0 auto; }
+    .barra div { height:100%; width:0; background:#d98a8a;
+                 animation:cargar 3s forwards; }
+    @keyframes cargar { to { width:100%; } }
+    #polaroid { display:none; text-align:center; padding:20px; }
+    .foto { background:#fff; padding:12px 12px 40px;
+            box-shadow:0 4px 12px rgba(0,0,0,.2);
+            transform:rotate(-2deg); display:inline-block; }
+    .foto img { width:240px; max-width:100%; display:block; }
+    .sobre { margin:24px auto 0; width:240px; padding:30px 0;
+             background:#e8c98f; border-radius:8px; cursor:pointer;
+             box-shadow:0 3px 8px rgba(0,0,0,.2); }
+    #carta { display:none; margin:20px auto 0; max-width:260px;
+             padding:20px; background:#fff8e7; border-radius:8px;
+             line-height:1.6; animation:aparecer 1s; }
+    @keyframes aparecer { from { opacity:0; } to { opacity:1; } }
+  </style>
+</head>
+<body>
+  <div id="carga">
+    <h2>Alecita❤️</h2>
+    <p>Algo se está encendiendo...</p>
+    <div class="barra"><div></div></div>
+  </div>
+  <div id="polaroid">
+    <p>Hoy es el cumpleaños de mi persona favorita❤️</p>
+    <div class="foto">
+      <img src="https://i.postimg.cc/4xX0j89F/Tarjeta-de-amor-vintage.png">
+    </div>
+    <div class="sobre" onclick="abrirCarta()">💌 Toca para abrir</div>
+    <div id="carta">
+      <p>Feliz cumpleaños. Hoy en su día quiero detener un momento el tiempo para decirte cuánto la amo.😍❤️
+Sé que no todo el tiempo es perfecto, que de repente tenemos nuestros roces, discusiones y días difíciles, pero también sé que cada uno de esos problemas lo podemos arreglar hablando, con paciencia y, sobre todo, con el amor tan grande que nos tenemos.🥹❤️
+Le agradezco a la vida por tenerla a mi lado, por caminar juntos en las buenas y en las malas, y por ser esa parte tan importante de mi día a día.❤️ Espero que hoy pase un cumpleaños hermoso, que se sienta muy querida y que esta nueva vuelta al sol le traiga mucha paz y felicidad🥹❤️
+La amo con todo mi corazón. ¡Feliz cumpleaños Mi niña😍🥹❤️</p>
+    </div>
+  </div>
+  <script>
+    setTimeout(function () {
+      document.getElementById("carga").style.display = "none";
+      document.getElementById("polaroid").style.display = "block";
+    }, 3500);
+    function abrirCarta() {
+      document.getElementById("carta").style.display = "block";
+    }
+  </script>
+</body>
+</html>
