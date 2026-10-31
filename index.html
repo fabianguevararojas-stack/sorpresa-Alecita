@@ -41,9 +41,19 @@
   </div>
   <div id="polaroid">
     <p>Hoy es el cumpleaños de mi persona favorita❤️</p>
-    <div class="foto">
+ <!--<div class="foto">
       <img src="https://i.postimg.cc/4xX0j89F/Tarjeta-de-amor-vintage.png">
-    </div>
+    </div>-->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<div id="libro">
+  <div class="pagina portada" data-density="hard"><h3>Nuestro álbum ❤️</h3><p>Toca la esquina para pasar la página</p></div>
+  <div class="pagina"><img src="https://i.postimg.cc/hGBqNzY0/Collage-de-Foto-Feliz-Cumpleanos-Happy-Birthday-Ilustrada-Collage-Azul.png"></div>
+  <div class="pagina"><img src="https://i.postimg.cc/ydf4Jf8P/Collage-de-fotos-Feliz-cumpleanos-amor-minimalista-blanco.png"></div>
+  <div class="pagina"><img src="https://i.postimg.cc/Tw2v38f1/Historia-de-Instagram-Amor-de-Pareja-Minimalista-Blanco-y-Negro.png"></div>
+  <div class="pagina"><img src="https://i.postimg.cc/rmy2w6MJ/Tarjeta-de-amor-romantica.png"></div>
+  <div class="pagina portada" data-density="hard"><h3>Te amo ❤️</h3></div>
+</div>
+
     <div class="sobre" onclick="abrirCarta()">💌 Toca para abrir</div>
     <div id="carta">
       <p>Feliz cumpleaños. Hoy en su día quiero detener un momento el tiempo para decirte cuánto la amo.😍❤️
@@ -57,6 +67,13 @@ La amo con todo mi corazón. ¡Feliz cumpleaños Mi niña😍🥹❤️</p>
     setTimeout(function () {
       document.getElementById("carga").style.display = "none";
       document.getElementById("polaroid").style.display = "block";
+      var libro = new St.PageFlip(document.getElementById("libro"), {
+  width: 300, height: 400, size: "stretch",
+  minWidth: 200, maxWidth: 400, minHeight: 280, maxHeight: 540,
+  showCover: true, maxShadowOpacity: 0.5, mobileScrollSupport: false
+});
+libro.loadFromHTML(document.querySelectorAll(".pagina"));
+
     }, 3500);
     function abrirCarta() {
       confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
